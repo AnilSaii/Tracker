@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <table class="table" style="font-family: 'Andika New Basic', sans-serif;">
+        <thead>
+          <tr>
+            <th scope="col">Seller</td>
+            <th scope="col"> Name </td>
+            <th scope="col">DesiredPrice</td>
+            <th scope="col">timestamp</th>
+          </tr>
+        </thead>
+
+          {% for i in tmplist %}
+
+          <tr style = "background-color:#E8E8E8">
+
+            <td>{{ i["seller"] }}</td>
+            <td>{{ i["product_name"] }}</td>
+            <td>₹{{ i["desired_price"] }}</td>
+            <td>{{ i["timestamp"] }}</td>
+          </form></td>
+
+          </tr>
+
+          {% endfor %}
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <th></th>
+          </tr>
+        </tbody>
+      </table>
+{% endblock %}

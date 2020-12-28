@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Nasa's Pic of the Day
+{% endblock %}
+
+{% block main %}
+    <div style="font-family: 'Andika New Basic', sans-serif;">
+        <h2 style = "color: violet">Picture of the Day!</h2>
+        <img src={{ apidata["hdurl"] }} alt="Picture of the Day!" width="500" height="500">
+        <p>By {{ apidata["copyright"] }}, dated {{ apidata["date"] }}</p>
+    </div>
+    <div>
+        <p>{{ apidata["explanation"] }}</p>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    Data provided for free by <a href="https://api.nasa.gov/" target="blank">Nasa</a>. View <a href="https://www.nasa.gov/about/highlights/HP_Privacy.html" target="blank">Nasa's Terms of Use</a>.
+{% endblock %}

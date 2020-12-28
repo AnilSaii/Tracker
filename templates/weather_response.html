@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    weather
+{% endblock %}
+
+{% block main %}
+        <table class="table" style="font-family: 'Andika New Basic', sans-serif;">
+        <thead>
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+
+        <tbody style = "background-color:#E8E8E8">
+
+          <tr>
+              <td>Cityname, Country Code</td>
+              <td>{{ city_weather["name"] }}, {{ city_weather["sys"]["country"] }}</td>
+          </tr>
+
+
+          <tr>
+            <td>Co-ordinates</td>
+            <td>{{ city_weather["coord"]["lon"] }} Longitude, {{ city_weather["coord"]["lat"] }} Latitude</td>
+          </tr>
+
+          <tr>
+              <td>Weather</td>
+              <td>{{ city_weather["weather"][0]["main"] }}</td>
+          </tr>
+
+          <tr>
+              <td>Weather Description</td>
+              <td>{{ city_weather["weather"][0]["description"] }}</td>
+          </tr>
+
+          <tr>
+              <td>temperature</td>
+              <td>{{ city_weather["main"]["temp"] }} k</td>
+          </tr>
+
+          <tr>
+              <td>Temparature range</td>
+              <td>{{ city_weather["main"]["temp_min"] }} k min - {{ city_weather["main"]["temp_max"] }} k max</td>
+          </tr>
+
+          <tr>
+              <td>Pressure</td>
+              <td>{{ city_weather["main"]["pressure"] * 100 }} Pascal or {{ city_weather["main"]["pressure"] }} hpa</td>
+          </tr>
+
+          <tr>
+              <td>Humidity</td>
+              <td>{{ city_weather["main"]["humidity"] }}%</td>
+          </tr>
+
+          <tr>
+              <td>Cloudiness</td>
+              <td>{{ city_weather["clouds"]["all"] }}%</td>
+          </tr>
+
+          <tr>
+              <td>Wind Speed</td>
+              <td>{{ city_weather["wind"]["speed"] }} meters/second</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+{% endblock %}
+
+{% block footer %}
+    Data provided for free by <a href="https://openweathermap.org/" target="blank">OpenWeather</a>. View <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf" target="blank">OpenWeather's Terms of Use</a>.
+{% endblock %}

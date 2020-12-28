@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+        <table class="table" style="font-family: 'Andika New Basic', sans-serif;">
+        <thead>
+          <tr>
+            <th scope="col">Seller</td>
+            <th scope="col"> Name </td>
+            <th scope="col">CurrentPrice</td>
+            <th scope="col">DesiredPrice</td>
+            <th scope="col">Visit</td>
+            <th scope="col">Modify</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for i in updated_details %}
+
+          <tr style = "background-color:#E8E8E8">
+
+            <td>{{ i["seller"] }}</td>
+            <td>{{ i["product_name"] }}</td>
+            <td>{{ i["actual_price"] }}</td>
+            <td>₹{{ i["desired_price"] }}</td>
+            <td><a href = {{ i["url"] }} target="blank">Click to Visit</a></td>
+            <td><form action = {{ url_for('modify', product_id = i["product_id"])}} method=get>
+              <input class = "form-control" class="btn btn-primary" style = "background-color: blue; color: white" type = submit value=Modify>
+                </form>
+            </td>
+            <td><form action = {{ url_for('delete', product_id = i["product_id"])}} method=post>
+              <input class = "form-control" class="btn btn-primary" style = "background-color: blue; color: white" type = submit value=Delete>
+                </form>
+            </td>
+          </tr>
+
+          {% endfor %}
+
+          
+        </tbody>
+      </table>
+{% endblock %}

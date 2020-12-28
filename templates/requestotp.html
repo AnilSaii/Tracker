@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Request OTP
+{% endblock %}
+
+{% block main %}
+    <form action={{ url_for('forgotpswdotp', user_id = id[0]["id"]) }} method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <p>Verify if it's really you!</p>
+        <p>OTP will be sent to {{ email }}.</p>
+              <input class = "form-control" class="btn btn-primary" style = "background-color: blue; color: white" type = submit value=Send-OTP>
+    </form>
+{% endblock %}

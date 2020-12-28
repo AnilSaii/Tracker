@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <div>
+            <p>Visit  <a href="https://www.amazon.in/?ref=icp_country_us" target="blank">amazon</a>, <a href="https://www.flipkart.com" target="blank">flipkart</a> to add some products.</p>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="url" placeholder="Url" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="price" placeholder="Amount (₹)" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

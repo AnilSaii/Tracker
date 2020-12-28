@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    OTP Verify
+{% endblock %}
+
+{% block main %}
+    <form action={{ url_for('forgotpswdverify', user_id = id["id"]) }} method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <h1>Please enter the OTP that has sent to your email: {{ email }}.</h1>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="otp" placeholder="OTP" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Verify</button>
+    </form>
+{% endblock %}

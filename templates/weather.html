@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Wheather
+{% endblock %}
+
+{% block main %}
+    <form action="/weather" method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <h2 style="color: rgb(14, 27, 214);">Enter a city name to get the weather!</h2>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="City" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Get Wheather</button>
+    </form>
+{% endblock %}
+
+{% block footer %}
+    Data provided for free by <a href="https://openweathermap.org/" target="blank">OpenWeather</a>. View <a href="https://openweather.co.uk/storage/app/media/Terms/Openweather_website_terms_and_conditions_of_use.pdf" target="blank">OpenWeather's Terms of Use</a>.
+{% endblock %}

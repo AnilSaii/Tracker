@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Modify
+{% endblock %}
+
+{% block main %}
+    <form action={{ url_for('modify', product_id = product_id)}} method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <div class="form-group">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Attribute</td>
+                    <th scope="col"> Value </td>
+                   
+                  </tr>
+                </thead>
+                <tbody>
+        
+                  <tr style = "background-color:#E8E8E8">
+        
+                    <td>Product Name</td>
+                    <td>{{ tmpdict[0]["product_name"] }}</td>
+
+                  </tr>
+
+                  <tr style = "background-color:#E8E8E8">
+        
+                    <td>Current Price</td>
+                    <td>{{ tmpdict[0]["actual_price"] }}</td>
+
+                  </tr>
+
+                  <tr style = "background-color:#E8E8E8">
+        
+                    <td>Current Desired Price</td>
+                    <td>₹{{ tmpdict[0]["desired_price"] }}</td>
+
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+            <input class="form-control" name="price" placeholder="Amount (₹)" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Modify</button>
+    </form>
+{% endblock %}

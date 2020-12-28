@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Astrology
+{% endblock %}
+
+{% block main %}
+    <form action="/nasa" method="post" style="font-family: 'Andika New Basic', sans-serif;">
+        <!--<h2>Get nasa's picture of the day</h2>
+        <button class="btn btn-primary" type="submit">GET</button>-->
+        <h2 style="color: rgb(26, 73, 226)">Get Nasa's Picture of the Day!</h2>
+        <p>Enter the date to be specific or simply click "GET" to get today's Picture of the Day!</p>
+        <input class = "form-control" type="text" name = "date" placeholder = "YYYY-MM-DD (or) today">
+        <button class="btn btn-primary" type="submit">GET</button>
+    </form>
+{% endblock %}
+
+{% block footer %}
+    Data provided for free by <a href="https://api.nasa.gov/" target="blank">Nasa</a>. View <a href="https://www.nasa.gov/about/highlights/HP_Privacy.html" target="blank">Nasa's Terms of Use</a>.
+{% endblock %}
+
